@@ -1,0 +1,54 @@
+{
+  "name": "qubitguard-dashboard",
+  "version": "1.0.0",
+  "description": "QUBITGUARD - Quantum-Grade Discord Security Dashboard",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next-auth": "^4.24.0",
+    "axios": "^1.5.0",
+    "framer-motion": "^10.16.4",
+    "react-hook-form": "^7.47.0",
+    "react-query": "^3.39.3",
+    "react-select": "^5.7.4",
+    "react-color": "^2.19.3",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.11.0",
+    "lucide-react": "^0.279.0",
+    "socket.io-client": "^4.7.2",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^1.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.3",
+    "@types/react": "^18.2.22",
+    "@types/react-dom": "^18.2.7",
+    "typescript": "^5.2.2",
+    "tailwindcss": "^3.3.3",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "eslint": "^8.49.0",
+    "eslint-config-next": "^14.0.0"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "security",
+    "moderation",
+    "quantum",
+    "dashboard",
+    "nextjs",
+    "react"
+  ],
+  "author": "QUBITGUARD Team",
+  "license": "MIT",
+  "copyright": "©2025 QUBITGUARD. All Rights Reserved. Made With 💚 For The Discord Community"
+}

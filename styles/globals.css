@@ -1,0 +1,477 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* QUBITGUARD Dashboard Global Styles */
+/* ©2025 QUBITGUARD. All Rights Reserved. Made With 💚 For The Discord Community */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-slate-900 text-white overflow-x-hidden;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Northern Lights Animated Background */
+.northern-lights-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, 
+    #0f0f23 0%,
+    #1a0f33 15%,
+    #2d1b69 30%, 
+    #1a1b3a 45%,
+    #0f4c75 60%,
+    #2d1b69 75%,
+    #1a0f33 90%,
+    #0f0f23 100%);
+  background-size: 400% 400%;
+  animation: aurora-flow 20s ease-in-out infinite;
+}
+
+.northern-lights-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at 20% 50%, 
+    rgba(139, 92, 246, 0.3) 0%,
+    rgba(59, 130, 246, 0.2) 25%,
+    rgba(16, 185, 129, 0.15) 50%,
+    transparent 75%);
+  animation: northern-lights-1 12s ease-in-out infinite;
+}
+
+.northern-lights-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at 80% 30%, 
+    rgba(16, 185, 129, 0.4) 0%,
+    rgba(59, 130, 246, 0.25) 30%,
+    rgba(139, 92, 246, 0.15) 60%,
+    transparent 80%);
+  animation: northern-lights-2 15s ease-in-out infinite reverse;
+}
+
+/* Additional Aurora Layers */
+.aurora-layer-1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(45deg,
+    transparent 0%,
+    rgba(139, 92, 246, 0.1) 25%,
+    rgba(59, 130, 246, 0.15) 50%,
+    rgba(16, 185, 129, 0.1) 75%,
+    transparent 100%);
+  animation: aurora-drift 25s linear infinite;
+  opacity: 0.8;
+}
+
+.aurora-layer-2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at 60% 70%,
+    rgba(16, 185, 129, 0.2) 0%,
+    rgba(139, 92, 246, 0.15) 40%,
+    transparent 70%);
+  animation: aurora-pulse 18s ease-in-out infinite;
+}
+
+/* QUBITGUARD Title Animation */
+.qubitguard-title {
+  background: linear-gradient(
+    90deg,
+    #8b5cf6 0%,
+    #3b82f6 25%,
+    #10b981 50%,
+    #3b82f6 75%,
+    #8b5cf6 100%
+  );
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: title-glow 4s ease-in-out infinite;
+  text-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+  font-weight: 900;
+  font-size: 3.5rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  @apply fixed left-0 top-0 h-full w-72 z-50;
+  background: rgba(15, 23, 42, 0.1);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 50px rgba(59, 130, 246, 0.1);
+}
+
+.sidebar:hover {
+  background: rgba(15, 23, 42, 0.15);
+  border-right: 1px solid rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 80px rgba(59, 130, 246, 0.2);
+}
+
+.sidebar-item {
+  @apply flex items-center px-6 py-4 text-slate-300 hover:text-white rounded-lg mx-3 my-1 transition-all duration-300 cursor-pointer relative;
+  font-weight: 500;
+}
+
+.sidebar-item:hover {
+  @apply transform translate-x-2;
+  background: rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 25px rgba(139, 218, 255, 0.3);
+  border-left: 3px solid #3b82f6;
+}
+
+.sidebar-item.active {
+  @apply bg-blue-500/20 text-blue-200;
+  border-left: 4px solid #3b82f6;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+}
+
+.sidebar-item-icon {
+  @apply mr-3 text-xl;
+  transition: all 0.3s ease;
+}
+
+.sidebar-item:hover .sidebar-item-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(139, 218, 255, 0.6));
+}
+
+/* Main Content Area */
+.main-content {
+  margin-left: 18rem;
+  min-height: 100vh;
+  padding: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Card Styles */
+.quantum-card {
+  @apply bg-slate-800/30 backdrop-blur-xl border border-slate-700/30 rounded-2xl p-6 shadow-2xl;
+  transition: all 0.3s ease-in-out;
+  background: rgba(30, 41, 59, 0.2);
+}
+
+.quantum-card:hover {
+  @apply border-blue-500/50 transform -translate-y-1;
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
+  background: rgba(30, 41, 59, 0.3);
+}
+
+/* Button Styles */
+.btn-quantum {
+  @apply px-8 py-4 bg-blue-600/80 hover:bg-blue-500 text-white rounded-xl font-semibold transition-all duration-300;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.btn-quantum:hover {
+  @apply transform -translate-y-1;
+  box-shadow: 0 12px 35px rgba(59, 130, 246, 0.6);
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+}
+
+.btn-northern {
+  @apply px-8 py-4 bg-emerald-600/80 hover:bg-emerald-500 text-white rounded-xl font-semibold transition-all duration-300;
+  background: linear-gradient(135deg, #10b981, #059669);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+.btn-northern:hover {
+  @apply transform -translate-y-1;
+  box-shadow: 0 12px 35px rgba(16, 185, 129, 0.6);
+}
+
+/* Invite Button Animation */
+.invite-btn {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6, #10b981);
+  background-size: 300% 300%;
+  animation: gradient-flow 3s ease-in-out infinite;
+  border-radius: 15px;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 40px rgba(139, 92, 246, 0.4);
+}
+
+.invite-btn::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #8b5cf6, #3b82f6, #10b981, #8b5cf6);
+  background-size: 400% 400%;
+  border-radius: 17px;
+  z-index: -1;
+  animation: rotate-border 4s linear infinite;
+}
+
+.invite-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 50px rgba(139, 92, 246, 0.6);
+}
+
+/* Status Indicators */
+.status-online {
+  @apply w-4 h-4 bg-emerald-500 rounded-full;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.8);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.status-offline {
+  @apply w-4 h-4 bg-slate-500 rounded-full;
+}
+
+.status-maintenance {
+  @apply w-4 h-4 bg-yellow-500 rounded-full;
+  box-shadow: 0 0 15px rgba(234, 179, 8, 0.8);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Loading Animations */
+.loading-spinner {
+  @apply w-10 h-10 border-4 border-blue-200/20 border-t-blue-500 rounded-full;
+  animation: spin 1s linear infinite;
+}
+
+/* Glow Effects */
+.glow-text {
+  text-shadow: 0 0 20px rgba(139, 218, 255, 0.8), 0 0 40px rgba(139, 218, 255, 0.6), 0 0 60px rgba(139, 218, 255, 0.4);
+}
+
+.glow-border {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), inset 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #1d4ed8, #7c3aed);
+}
+
+/* Footer Styles */
+.footer {
+  @apply mt-16 py-8 border-t border-slate-700/50;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(20px);
+}
+
+.footer-links {
+  @apply flex flex-wrap justify-center gap-6 mb-4;
+}
+
+.footer-link {
+  @apply text-blue-400 hover:text-blue-300 transition-colors duration-200;
+}
+
+.footer-link:hover {
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+  
+  .qubitguard-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes aurora-flow {
+  0%, 100% { background-position: 0% 50%; }
+  25% { background-position: 50% 25%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 75%; }
+}
+
+@keyframes northern-lights-1 {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: translateX(0) translateY(0) scale(1); 
+  }
+  25% { 
+    opacity: 0.7; 
+    transform: translateX(50px) translateY(-30px) scale(1.1); 
+  }
+  50% { 
+    opacity: 0.5; 
+    transform: translateX(-30px) translateY(20px) scale(0.9); 
+  }
+  75% { 
+    opacity: 0.8; 
+    transform: translateX(80px) translateY(-10px) scale(1.2); 
+  }
+}
+
+@keyframes northern-lights-2 {
+  0%, 100% { 
+    opacity: 0.4; 
+    transform: translateX(0) translateY(0) rotate(0deg); 
+  }
+  33% { 
+    opacity: 0.8; 
+    transform: translateX(-60px) translateY(40px) rotate(5deg); 
+  }
+  66% { 
+    opacity: 0.6; 
+    transform: translateX(40px) translateY(-25px) rotate(-3deg); 
+  }
+}
+
+@keyframes aurora-drift {
+  0% { transform: translateX(-100%) rotate(0deg); }
+  50% { transform: translateX(0%) rotate(2deg); }
+  100% { transform: translateX(100%) rotate(0deg); }
+}
+
+@keyframes aurora-pulse {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: scale(1); 
+  }
+  50% { 
+    opacity: 0.8; 
+    transform: scale(1.1); 
+  }
+}
+
+@keyframes title-glow {
+  0%, 100% { 
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.6));
+  }
+  50% { 
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.8));
+  }
+}
+
+@keyframes gradient-flow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes rotate-border {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.7; 
+    transform: scale(1.1);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Print Styles */
+@media print {
+  .northern-lights-bg,
+  .aurora-layer-1,
+  .aurora-layer-2,
+  .sidebar {
+    display: none !important;
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .quantum-card {
+    @apply border-2 border-white;
+  }
+  
+  .sidebar-item:hover {
+    @apply bg-white text-black;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .northern-lights-bg,
+  .aurora-layer-1,
+  .aurora-layer-2,
+  .qubitguard-title,
+  .invite-btn,
+  .loading-spinner,
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
